@@ -47,8 +47,8 @@ function Storys()
             img: "assets/img/memeriagourmet.svg",
             nome: "memeriagourmet",
         },
-
-    ]
+    ];
+    
     return(
         <div class="stories">
         {storys.map(story => <Story                            
