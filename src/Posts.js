@@ -1,5 +1,25 @@
+import React from "react";
+
 function Post(props)
 {
+  const [heart, setHeart] = React.useState("heart-outline");
+  const [red, setRed] = React.useState("md hydrated black");
+
+  function like()
+  {
+    
+    if(heart === "heart-outline")
+    {
+      setHeart("heart");
+      setRed("md hydrated red");
+    }
+    else
+    {
+      setHeart("heart-outline");
+      setRed("md hydrated black");
+    }
+  }
+
     return(
         <div class="post">
           <div class="topo">
@@ -13,13 +33,13 @@ function Post(props)
           </div>
 
           <div class="conteudo">
-            <img src={props.conteudo} />
+            <img onClick={() => like()} src={props.conteudo} />
           </div>
 
           <div class="fundo">
             <div class="acoes">
               <div>
-                <ion-icon name="heart-outline"></ion-icon>
+                <ion-icon onClick={() => like()} name={heart} class={red}>a</ion-icon>
                 <ion-icon name="chatbubble-outline"></ion-icon>
                 <ion-icon name="paper-plane-outline"></ion-icon>
               </div>
